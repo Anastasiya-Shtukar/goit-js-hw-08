@@ -84,5 +84,30 @@ gallery.insertAdjacentHTML("beforeend", galleryImages);
 
 gallery.addEventListener("click", function (event) {
   event.preventDefault();
-  console.log(event.target.image.original);
+
+  if (event.target.classList.contains("gallery-image")) {
+    const originalImageURL = event.target.dataset.source;
+    console.log(originalImageURL);
+    const instance = basicLightbox
+      .create(
+        `
+	<img
+      src="${event.target.dataset.source}"
+      alt=""
+    />
+`
+      )
+      .show();
+  }
+
+  const visible = basicLightbox.visible();
+  console.log(visible);
+
+  document.addEventListener("keydown", (event) => {
+    if (visible) {
+      if (event.code === "Escape") {
+        basicLightbox.close;
+      }
+    }
+  });
 });
