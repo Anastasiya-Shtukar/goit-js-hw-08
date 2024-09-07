@@ -81,3 +81,8 @@ const galleryImages = images
   .join("");
 
 gallery.insertAdjacentHTML("beforeend", galleryImages);
+
+gallery.addEventListener("click", function (event) {
+  event.preventDefault();
+  console.log(event.target.image.original);
+});
