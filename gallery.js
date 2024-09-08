@@ -88,26 +88,26 @@ gallery.addEventListener("click", function (event) {
   if (event.target.classList.contains("gallery-image")) {
     const originalImageURL = event.target.dataset.source;
     console.log(originalImageURL);
-    const instance = basicLightbox
-      .create(
-        `
+
+    const instance = basicLightbox.create(
+      `
 	<img
       src="${event.target.dataset.source}"
       alt=""
     />
 `
-      )
-      .show();
-  }
+    );
 
-  const visible = basicLightbox.visible();
-  console.log(visible);
+    instance.show();
 
-  document.addEventListener("keydown", (event) => {
+    const visible = basicLightbox.visible();
+    console.log(visible);
     if (visible) {
-      if (event.code === "Escape") {
-        basicLightbox.close;
-      }
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Escape") {
+          instance.close();
+        }
+      });
     }
-  });
+  }
 });
