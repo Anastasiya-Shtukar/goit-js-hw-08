@@ -5,6 +5,12 @@
   margin: 0;
   padding: 0;
 }
+body {
+  height: 696px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .gallery-image {
   width: 360px;
@@ -12,6 +18,11 @@
   transform: scale(1);
   transition: transform, 0.3s;
   cursor: pointer;
+}
+
+.gallery-item {
+  width: 360px;
+  height: 200px;
 }
 
 .gallery-image:hover {
@@ -26,9 +37,10 @@ ul {
   flex-wrap: wrap;
   row-gap: 24px;
   column-gap: 24px;
-  margin-top: 24px;
+  width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  margin: auto;
 }
